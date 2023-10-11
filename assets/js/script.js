@@ -19,9 +19,10 @@ function createGameBoard(pictures) {
 
             if (currentPicture < pictures.length) {
                 const td = document.createElement('td');
-                const img = document.createElement('img');
-                img.src = pictures[currentPicture];
-                img.alt = 'Picture Tile';
+                const img = document.createElement('span'); // document.createElement('img');
+                img.textContent = pictures[currentPicture]; // TEMPORARILY DISPLAYING TEXT UNTIL IMAGES SOURCED
+                // img.src = pictures[currentPicture];
+                // img.alt = 'Picture Tile';
                 td.appendChild(img);
                 tableRow.appendChild(td);
             }
