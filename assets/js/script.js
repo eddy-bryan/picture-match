@@ -30,6 +30,7 @@ const pictures = [
  * Function to create the game board grid from the pictures array
  */
 function createGameBoard(pictures) {
+    const gameBoard = document.getElementById('game-board');
     const table = document.createElement('table');
 
     // Loop through each row of the table
@@ -57,9 +58,7 @@ function createGameBoard(pictures) {
         table.appendChild(tableRow);
     }
 
-    return table;
+    gameBoard.appendChild(table);
 }
 
-const gameArea = document.getElementById('game-area');
-const gameBoard = createGameBoard(pictures);
-gameArea.appendChild(gameBoard);
+createGameBoard(pictures);
