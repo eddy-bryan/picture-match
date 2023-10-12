@@ -1,5 +1,30 @@
-// Sample array of picture identifiers (replace with actual image URLs)
-const pictures = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+// Array of pictures for the gameboard
+const pictures = [
+    'burger.webp',
+    'chilli.webp',
+    'donut.webp',
+    'eagle.webp',
+    'elephant.webp',
+    'fries.webp',
+    'gorilla.webp',
+    'hotdog.webp',
+    'pizza.webp',
+    'shark.webp',
+    'sloth.webp',
+    'spider.webp',
+    'burger.webp',
+    'chilli.webp',
+    'donut.webp',
+    'eagle.webp',
+    'elephant.webp',
+    'fries.webp',
+    'gorilla.webp',
+    'hotdog.webp',
+    'pizza.webp',
+    'shark.webp',
+    'sloth.webp',
+    'spider.webp',
+];
 
 /**
  * Function to create the game board grid from the pictures array
@@ -19,10 +44,11 @@ function createGameBoard(pictures) {
 
             if (currentPicture < pictures.length) {
                 const td = document.createElement('td');
-                const img = document.createElement('span'); // document.createElement('img');
-                img.textContent = pictures[currentPicture]; // TEMPORARILY DISPLAYING TEXT UNTIL IMAGES SOURCED
-                // img.src = pictures[currentPicture];
-                // img.alt = 'Picture Tile';
+                const img = document.createElement('img');
+                img.style.width = '150px';
+                img.style.height = '150px';
+                img.src = 'assets/images/' + pictures[currentPicture];
+                img.alt = 'Picture Tile';
                 td.appendChild(img);
                 tableRow.appendChild(td);
             }
