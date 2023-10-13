@@ -23,9 +23,18 @@ img {
     border-radius: 20px;
 }
 
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
 .fa-heart {
     color: red;
-    padding: 0 1px;
+    padding: 0 0.1em;
+    font-size: 1.5em;
 }
 
 #game-area {
@@ -33,21 +42,21 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: 'Indie Flower', cursive;
 }
 
 #title,
 #game-stats {
     display: flex;
-    flex-grow: 1;
+    height: 8em;
 }
 
 #life-counter,
 #timer {
     display: flex;
     align-items: center;
-    border: 1px solid black;
-    width: 250px;
-    margin: 10px;
+    align-self: flex-start;
+    width: 38%;
 }
 
 #title {
@@ -60,6 +69,7 @@ img {
     width: 100%;
 }
 
-#life-counter h3, #timer h3 {
-    padding: 5px;
+#life-counter h2,
+#timer h2 {
+    padding: 0.1em;
 }
