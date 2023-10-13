@@ -32,6 +32,8 @@ let correctPairs = [];
 
 let tilesLocked = false;
 
+let memoryPhase = true;
+
 let coundownValue = 0;
 
 
@@ -132,7 +134,7 @@ initialiseLives(5);
  */
 function flipTile(tile) {
     // Checks to see if the tiles are already revealed or locked (correct)
-    if (tilesLocked || flippedTiles.includes(tile) || flippedTiles.length === 2 || tile.dataset.matched === 'true') {
+    if (tilesLocked || flippedTiles.includes(tile) || flippedTiles.length === 2 || tile.dataset.matched === 'true' || memoryPhase) {
         return;
     }
 
@@ -163,8 +165,8 @@ function checkMatch() {
 
     if (picture1 === picture2) {
         // If tiles match, adds green border around tiles
-        tile1.style.border = '5px solid green';
-        tile2.style.border = '5px solid green';
+        tile1.style.border = '5px solid rgb(0, 170, 0)';
+        tile2.style.border = '5px solid rgb(0, 170, 0)';
 
         // Set the matched attribute to true for correct tiles
         tile1.dataset.matched = 'true';
@@ -265,6 +267,7 @@ function startCountdown(initialValue, onCountdownEnd) {
             if (onCountdownEnd && typeof onCountdownEnd === 'function') {
                 onCountdownEnd();
             }
+            memoryPhase = false;
         }
     }, 1000);
 }
