@@ -48,8 +48,17 @@ function createGameBoard(pictures) {
                 const img = document.createElement('img');
                 img.style.width = '150px';
                 img.style.height = '150px';
-                img.src = 'assets/images/' + pictures[currentPicture];
+                img.src = 'assets/images/tile-back.webp';
                 img.alt = 'Picture Tile';
+
+                // Stores the current picture to each tile
+                img.dataset.picture = pictures[currentPicture];
+
+                // Flips the tile by calling the flipTile() function when clicked
+                img.addEventListener('click', function () {
+                    flipTile(this);
+                });
+
                 td.appendChild(img);
                 tableRow.appendChild(td);
             }
@@ -62,3 +71,12 @@ function createGameBoard(pictures) {
 }
 
 createGameBoard(pictures);
+
+
+/**
+ * Flips the tile to reveal its alternative image
+ */
+function flipTile(tile) {
+    const currentPicture = tile.dataset.picture;
+    tile.src = tile.src.includes('tile-back.webp') ? `assets/images/${currentPicture}` : 'assets/images/tile-back.webp';
+}
