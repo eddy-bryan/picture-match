@@ -26,6 +26,8 @@ const pictures = [
     'spider.webp',
 ];
 
+let flippedTiles = [];
+let tilesLocked = false;
 
 /**
  * Shuffles an array
@@ -120,6 +122,47 @@ createGameBoard(pictures);
  * Flips the tile to reveal its alternative image
  */
 function flipTile(tile) {
+    // Checks to see if the tiles are already revealed or locked (correct)
+    if (tilesLocked || flippedTiles.includes(tile) || flippedTiles.length === 2) {
+        return;
+    }
+
     const currentPicture = tile.dataset.picture;
-    tile.src = tile.src.includes('tile-back.webp') ? `assets/images/${currentPicture}` : 'assets/images/tile-back.webp';
+    tile.src = `assets/images/${currentPicture}`;
+
+    // Add the flipped tile to the array
+    flippedTiles.push(tile);
+
+    // Check if two tiles are flipped
+    if (flippedTiles.length === 2) {
+        // Lock the tiles to prevent clicking during the timeout
+        tilesLocked = true;
+
+        // Check for a match after a delay
+        setTimeout(checkMatch, 1000);
+    }
+}
+
+/**
+ * Check if flipped tiles match
+ */
+function checkMatch() {
+    const [tile1, tile2] = flippedTiles;
+    const picture1 = tile1.dataset.picture;
+    const picture2 = tile2.dataset.picture;
+
+    if (picture1 === picture2) {
+        // If match, remove click event listeners and keep tiles flipped
+        tile1.removeEventListener('click', flipTile);
+        tile2.removeEventListener('click', flipTile);
+    } else {
+        // If no match, flip the tiles back
+        tile1.src = 'assets/images/tile-back.webp';
+        tile2.src = 'assets/images/tile-back.webp';
+    }
+
+    // Clear the flipped tiles array
+    flippedTiles = [];
+    // Unlock the tiles
+    tilesLocked = false;
 }
