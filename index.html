@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Tilt+Neon&display=swap" rel="stylesheet">
     <title>Picture Match</title>
   </head>
   <body>
@@ -34,6 +33,17 @@
         </div>
       </div>
     </div>
+
+    <div id="game-start-overlay">
+
+        <div id="game-instructions">
+            <h1>Picture Match!</h1>
+            <p>Welcome to Picture Match! You will have 10 seconds to memorise where all of the pictures are on the board. You have four lives, if a picture is guessed incorrectly you will lose a life! When all lives are lost, its game over. Good Luck! Click 'PLAY' to begin!</p>
+            <button id="start-button">Play</button>
+        </div>
+
+    </div>
+
     <script src="assets/js/script.js"></script>
     <script
       src="https://kit.fontawesome.com/20d4ac6c68.js"
