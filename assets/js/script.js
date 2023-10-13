@@ -28,6 +28,8 @@ const pictures = [
 
 let flippedTiles = [];
 
+let correctPairs = [];
+
 let tilesLocked = false;
 
 let coundownValue = 0;
@@ -130,7 +132,7 @@ initialiseLives(5);
  */
 function flipTile(tile) {
     // Checks to see if the tiles are already revealed or locked (correct)
-    if (tilesLocked || flippedTiles.includes(tile) || flippedTiles.length === 2) {
+    if (tilesLocked || flippedTiles.includes(tile) || flippedTiles.length === 2 || tile.dataset.matched === 'true') {
         return;
     }
 
@@ -160,9 +162,33 @@ function checkMatch() {
     const picture2 = tile2.dataset.picture;
 
     if (picture1 === picture2) {
-        // If match, remove click event listeners and keep tiles flipped
+        // If tiles match, adds green border around tiles
+        tile1.style.border = '5px solid green';
+        tile2.style.border = '5px solid green';
+
+        // Set the matched attribute to true for correct tiles
+        tile1.dataset.matched = 'true';
+        tile2.dataset.matched = 'true';
+
+        // Add correct tiles to the array
+        correctPairs.push(tile1, tile2);
+
+        // Remove event listeners for matched tiles
         tile1.removeEventListener('click', flipTile);
         tile2.removeEventListener('click', flipTile);
+
+        // Check if all pairs are found
+        if (correctPairs.length === pictures.length / 2) {
+
+
+
+            
+            // ADD GAME WINNER MESSAGE HERE!!!!!
+
+
+
+
+        }
     } else {
         // If no match, flip the tiles back
         tile1.src = 'assets/images/tile-back.webp';
