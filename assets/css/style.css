@@ -23,6 +23,11 @@ img {
     border-radius: 20px;
 }
 
+.fa-heart {
+    color: red;
+    padding: 0 1px;
+}
+
 #game-area {
     display: flex;
     justify-content: center;
@@ -36,6 +41,15 @@ img {
     flex-grow: 1;
 }
 
+#life-counter,
+#timer {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 250px;
+    margin: 10px;
+}
+
 #title {
     align-items: center;
     flex-direction: column;
@@ -44,4 +58,8 @@ img {
 #game-stats {
     justify-content: space-between;
     width: 100%;
+}
+
+#life-counter h3, #timer h3 {
+    padding: 5px;
 }

@@ -122,7 +122,7 @@ function flipAllPicturesBack() {
 
 createGameBoard(pictures);
 
-initialiseLives(4);
+initialiseLives(5);
 
 
 /**
