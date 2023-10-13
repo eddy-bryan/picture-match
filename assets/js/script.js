@@ -90,14 +90,24 @@ function createGameBoard(pictures) {
     }
 
     gameBoard.appendChild(table);
+}
+
+
+/**
+ * Starts the game by revealing all pictures for memorising until the countdown ends
+ */
+function startGame() {
+    document.getElementById('game-start-overlay').style.display = 'none';
 
     // Reveal all pictures before the game begins
     revealAllPictures();
 
     //Start the countdown and display it in the span
     startCountdown(10, flipAllPicturesBack);
-
 }
+
+
+document.getElementById('start-button').addEventListener('click', startGame);
 
 
 /**
