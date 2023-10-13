@@ -80,6 +80,37 @@ function createGameBoard(pictures) {
     }
 
     gameBoard.appendChild(table);
+
+    // Reveal all pictures before the game begins
+    revealAllPictures();
+
+    // Timer before pictures are hidden
+    setTimeout(() => {
+        flipAllPicturesBack();
+    }, 10000);
+
+}
+
+/**
+ * Used to initially reveal all pictures before the game begins
+ */
+function revealAllPictures() {
+    const tiles = document.getElementById('game-board').getElementsByTagName('img');
+    for (let i = 0; i < tiles.length; i++) {
+        const tile = tiles[i];
+        tile.src = `assets/images/${tile.dataset.picture}`;
+    }
+}
+
+/**
+ * Used to flip all pictures back after revealing them
+ */
+function flipAllPicturesBack() {
+    const tiles = document.getElementById('game-board').getElementsByTagName('img');
+    for (let i = 0; i < tiles.length; i++) {
+        const tile = tiles[i];
+        tile.src = 'assets/images/tile-back.webp';
+    }
 }
 
 createGameBoard(pictures);
