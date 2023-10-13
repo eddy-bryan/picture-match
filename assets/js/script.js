@@ -27,7 +27,9 @@ const pictures = [
 ];
 
 let flippedTiles = [];
+
 let tilesLocked = false;
+
 
 /**
  * Shuffles an array
@@ -93,6 +95,7 @@ function createGameBoard(pictures) {
 
 }
 
+
 /**
  * Used to initially reveal all pictures before the game begins
  */
@@ -103,6 +106,7 @@ function revealAllPictures() {
         tile.src = `assets/images/${tile.dataset.picture}`;
     }
 }
+
 
 /**
  * Used to flip all pictures back after revealing them
@@ -115,7 +119,10 @@ function flipAllPicturesBack() {
     }
 }
 
+
 createGameBoard(pictures);
+
+initialiseLives(4);
 
 
 /**
@@ -143,6 +150,7 @@ function flipTile(tile) {
     }
 }
 
+
 /**
  * Check if flipped tiles match
  */
@@ -159,10 +167,42 @@ function checkMatch() {
         // If no match, flip the tiles back
         tile1.src = 'assets/images/tile-back.webp';
         tile2.src = 'assets/images/tile-back.webp';
+        deductLife();
     }
 
     // Clear the flipped tiles array
     flippedTiles = [];
     // Unlock the tiles
     tilesLocked = false;
+}
+
+
+function createLivesArray(numLives) {
+    const livesArray = [];
+    for (let i = 0; i < numLives; i++) {
+        livesArray.push('<i class="fa-solid fa-heart"></i>');
+    }
+    return livesArray;
+}
+
+
+function initialiseLives(numLives) {
+    const livesContainer = document.getElementById('lives-container');
+    const livesArray = createLivesArray(numLives);
+
+    for (let i = 0; i < livesArray.length; i++) {
+        const lifeSpan = document.createElement('span');
+        lifeSpan.innerHTML = livesArray[i];
+        livesContainer.appendChild(lifeSpan);
+    }
+}
+
+
+function deductLife() {
+    const livesContainer = document.getElementById('lives-container');
+    const lives = livesContainer.getElementsByTagName('span');
+
+    if (lives.length > 0) {
+        lives[lives.length - 1].remove();
+    }
 }
