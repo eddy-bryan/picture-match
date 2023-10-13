@@ -30,6 +30,8 @@ let flippedTiles = [];
 
 let tilesLocked = false;
 
+let coundownValue = 0;
+
 
 /**
  * Shuffles an array
@@ -88,10 +90,8 @@ function createGameBoard(pictures) {
     // Reveal all pictures before the game begins
     revealAllPictures();
 
-    // Timer before pictures are hidden
-    setTimeout(() => {
-        flipAllPicturesBack();
-    }, 10000);
+    //Start the countdown and display it in the span
+    startCountdown(10, flipAllPicturesBack);
 
 }
 
@@ -177,6 +177,9 @@ function checkMatch() {
 }
 
 
+/**
+ * Creates an array that stores the players life hearts
+ */
 function createLivesArray(numLives) {
     const livesArray = [];
     for (let i = 0; i < numLives; i++) {
@@ -186,6 +189,9 @@ function createLivesArray(numLives) {
 }
 
 
+/**
+ * Populates the lives-container with the livesArray
+ */
 function initialiseLives(numLives) {
     const livesContainer = document.getElementById('lives-container');
     const livesArray = createLivesArray(numLives);
@@ -205,4 +211,42 @@ function deductLife() {
     if (lives.length > 0) {
         lives[lives.length - 1].remove();
     }
+}
+
+
+/**
+ * Function to start the countdown
+ * @param {number} initialValue - The initial value of the countdown
+ * @param {function} onCountdownEnd - The callback function to be executed when the countdown ends
+ */
+function startCountdown(initialValue, onCountdownEnd) {
+    let countdownValue = initialValue;
+
+    // Initial display of the countdown
+    updateCountdown(countdownValue);
+
+    // Updates the countdown every second
+    const countdownInterval = setInterval(() => {
+        countdownValue--;
+
+        // Displays the countdown in the span
+        updateCountdown(countdownValue);
+
+        // Checks to see if the countdown has reached 0
+        if (countdownValue === 0) {
+            clearInterval(countdownInterval); // Stops the countdown
+            // Executes the callback function when the countdown ends
+            if (onCountdownEnd && typeof onCountdownEnd === 'function') {
+                onCountdownEnd();
+            }
+        }
+    }, 1000);
+}
+
+
+/**
+ * Function to update the countdown display
+ */
+function updateCountdown(value) {
+    document.getElementById('countdown').innerText = `${value}`;
 }
