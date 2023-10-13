@@ -26,11 +26,23 @@ const pictures = [
     'spider.webp',
 ];
 
+
+/**
+ * Shuffles an array
+ */
+function shuffle(array) {
+    // Copys the array using slice() and shuffles it randomly
+    // by generating a random number between -0.5 and 0.5
+    return array.slice().sort(() => Math.random() - 0.5);
+}
+
+
 /**
  * Function to create the game board grid from the pictures array
  */
 function createGameBoard(pictures) {
     const gameBoard = document.getElementById('game-board');
+    const shuffledPictures = shuffle(pictures);
     const table = document.createElement('table');
 
     // Loop through each row of the table
@@ -43,7 +55,7 @@ function createGameBoard(pictures) {
             // Find the position of the current picture in the grid
             const currentPicture = row * 6 + col;
 
-            if (currentPicture < pictures.length) {
+            if (currentPicture < shuffledPictures.length) {
                 const td = document.createElement('td');
                 const img = document.createElement('img');
                 img.style.width = '150px';
@@ -52,7 +64,7 @@ function createGameBoard(pictures) {
                 img.alt = 'Picture Tile';
 
                 // Stores the current picture to each tile
-                img.dataset.picture = pictures[currentPicture];
+                img.dataset.picture = shuffledPictures[currentPicture];
 
                 // Flips the tile by calling the flipTile() function when clicked
                 img.addEventListener('click', function () {
