@@ -20,3 +20,6 @@ fix - created a new array for correct pairs and added an additional check to the
 
 tiles are flipping if clicked before the game starts and correct tiles retain the green border and lock in the tile-back image after the game starts
 fix - added a memoryPhase condition to the flipTile function
+
+sounds not playing
+fix - audio clips have been moved before the script is loaded in the html file

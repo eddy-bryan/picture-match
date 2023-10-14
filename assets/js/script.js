@@ -26,6 +26,13 @@ const pictures = [
     'spider.webp',
 ];
 
+const gameOverSound = document.getElementById('game-over');
+const matchSound = document.getElementById('match');
+const noMatchSound = document.getElementById('no-match');
+const selectSound = document.getElementById('select');
+const timerSound = document.getElementById('timer');
+const winSound = document.getElementById('win');
+
 let flippedTiles = [];
 
 let correctPairs = [];
@@ -147,12 +154,14 @@ function flipTile(tile) {
     if (tilesLocked || flippedTiles.includes(tile) || flippedTiles.length === 2 || tile.dataset.matched === 'true' || memoryPhase) {
         return;
     }
-
     const currentPicture = tile.dataset.picture;
     tile.src = `assets/images/${currentPicture}`;
 
     // Add the flipped tile to the array
     flippedTiles.push(tile);
+
+    // Plays the select sound when a tile is flipped
+    selectSound.play();
 
     // Check if two tiles are flipped
     if (flippedTiles.length === 2) {
