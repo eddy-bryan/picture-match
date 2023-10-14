@@ -153,7 +153,7 @@ function flipAllPicturesBack() {
 createGameBoard(pictures);
 
 // Set players lives, number indicates number of lives
-initialiseLives(8);
+initialiseLives(10);
 
 
 /**
