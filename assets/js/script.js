@@ -48,7 +48,7 @@ let coundownValue = 0;
  * Shuffles an array
  */
 function shuffle(array) {
-    console.log('Shuffling...')
+    console.log('Shuffling...');
 
     // Copys the array using slice() and shuffles it randomly
     // by generating a random number between -0.5 and 0.5
@@ -97,7 +97,7 @@ function createGameBoard(pictures) {
 
         table.appendChild(tableRow);
     }
-    console.log('Creating game board...')
+    console.log('Creating game board...');
 
     gameBoard.appendChild(table);
 }
@@ -117,6 +117,7 @@ function startGame() {
 }
 
 
+// Enables the game to start when the play button is clicked
 document.getElementById('start-button').addEventListener('click', startGame);
 
 
@@ -183,7 +184,7 @@ function flipTile(tile) {
 
         // Lock the tiles to prevent clicking during the timeout
         tilesLocked = true;
-        console.log('Tiles locked.')
+        console.log('Tiles locked.');
 
         // Check for a match after a delay
         setTimeout(checkMatch, 1000);
@@ -225,7 +226,7 @@ function checkMatch() {
 
         // Check for a win after a delay
         setTimeout(checkForWin, 500);
-        console.log('Checking for win...')
+        console.log('Checking for win...');
     } else {
         console.log('No match found.');
 
@@ -378,4 +379,46 @@ function checkForWin() {
         // Plays the win sound
         winSound.play();
     }
+}
+
+
+/**
+ * Restarts the game
+ */
+function restartGame() {
+    // Reset game variables
+    console.log('Resetting game variables...');
+    flippedTiles = [];
+    correctPairs = [];
+    tilesLocked = false;
+    memoryPhase = true;
+
+    // Reset lives
+    console.log('Resetting player lives...');
+    const livesContainer = document.getElementById('lives-container');
+    livesContainer.innerHTML = ''; // Clear any remaining lives
+    initialiseLives(10);
+
+    // Reset the game board
+    console.log('Resetting the game board...');
+    const gameBoard = document.getElementById('game-board');
+    gameBoard.innerHTML = ''; // Clear the existing game board
+    createGameBoard(pictures);
+
+    // Hide overlays
+    console.log('Closing overlay...');
+    document.getElementById('winner-overlay').style.display = 'none';
+    document.getElementById('game-over-overlay').style.display = 'none';
+
+    // Start the game again
+    startGame();
+}
+
+
+
+const restartButtons = document.getElementsByClassName('restart-button');
+
+// Enables the game to restart when the play again button is clicked
+for (let i = 0; i < restartButtons.length; i++) {
+    restartButtons[i].addEventListener('click', restartGame);
 }
