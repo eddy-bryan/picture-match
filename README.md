@@ -24,6 +24,9 @@ fix - added a memoryPhase condition to the flipTile function
 sounds not playing
 fix - audio clips have been moved before the script is loaded in the html file
 
+winner message pops up before win
+fix - correct pairs were stored as individual tiles in the correctPairs array rather than as pairs. Updated the checkForWin function to suit.
+
 
 
 TO DO

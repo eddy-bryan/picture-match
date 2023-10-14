@@ -48,6 +48,8 @@ let coundownValue = 0;
  * Shuffles an array
  */
 function shuffle(array) {
+    console.log('Shuffling...')
+
     // Copys the array using slice() and shuffles it randomly
     // by generating a random number between -0.5 and 0.5
     return array.slice().sort(() => Math.random() - 0.5);
@@ -95,6 +97,7 @@ function createGameBoard(pictures) {
 
         table.appendChild(tableRow);
     }
+    console.log('Creating game board...')
 
     gameBoard.appendChild(table);
 }
@@ -122,6 +125,9 @@ document.getElementById('start-button').addEventListener('click', startGame);
  */
 function revealAllPictures() {
     const tiles = document.getElementById('game-board').getElementsByTagName('img');
+
+    console.log('Revealing all pictures for memorisation...');
+
     for (let i = 0; i < tiles.length; i++) {
         const tile = tiles[i];
         tile.src = `assets/images/${tile.dataset.picture}`;
@@ -134,6 +140,9 @@ function revealAllPictures() {
  */
 function flipAllPicturesBack() {
     const tiles = document.getElementById('game-board').getElementsByTagName('img');
+
+    console.log('Hiding pictures...');
+
     for (let i = 0; i < tiles.length; i++) {
         const tile = tiles[i];
         tile.src = 'assets/images/tile-back.webp';
@@ -154,10 +163,14 @@ function flipTile(tile) {
     if (tilesLocked || flippedTiles.includes(tile) || flippedTiles.length === 2 || tile.dataset.matched === 'true' || memoryPhase) {
         return;
     }
+
+    console.log('Flipping tile...');
+
     const currentPicture = tile.dataset.picture;
     tile.src = `assets/images/${currentPicture}`;
 
     // Add the flipped tile to the array
+    console.log('Adding tile to flippedTiles array...');
     flippedTiles.push(tile);
 
     // Plays the select sound when a tile is flipped
@@ -165,8 +178,11 @@ function flipTile(tile) {
 
     // Check if two tiles are flipped
     if (flippedTiles.length === 2) {
+        console.log('Locking tiles...');
+
         // Lock the tiles to prevent clicking during the timeout
         tilesLocked = true;
+        console.log('Tiles locked.')
 
         // Check for a match after a delay
         setTimeout(checkMatch, 1000);
@@ -182,7 +198,11 @@ function checkMatch() {
     const picture1 = tile1.dataset.picture;
     const picture2 = tile2.dataset.picture;
 
+    console.log('Checking for match...');
+
     if (picture1 === picture2) {
+        console.log('Match found.');
+
         // Plays match sound if tiles match
         matchSound.play();
 
@@ -195,25 +215,19 @@ function checkMatch() {
         tile2.dataset.matched = 'true';
 
         // Add correct tiles to the array
+        console.log('Adding tiles to correctPairs array...');
         correctPairs.push(tile1, tile2);
 
         // Remove event listeners for matched tiles
         tile1.removeEventListener('click', flipTile);
         tile2.removeEventListener('click', flipTile);
 
-        // Check if all pairs are found
-        if (correctPairs.length === pictures.length / 2) {
-
-
-
-
-            // ADD GAME WINNER MESSAGE HERE!!!!!
-
-
-
-
-        }
+        // Check for a win after a delay
+        setTimeout(checkForWin, 500);
+        console.log('Checking for win...')
     } else {
+        console.log('No match found.');
+
         // Plays the no-match sound if the tiles don't match
         noMatchSound.play();
 
@@ -238,6 +252,8 @@ function checkMatch() {
  */
 function createLivesArray(numLives) {
     const livesArray = [];
+
+    console.log('Allocating player lives...');
     for (let i = 0; i < numLives; i++) {
         livesArray.push('<i class="fa-solid fa-heart"></i>');
     }
@@ -252,6 +268,7 @@ function initialiseLives(numLives) {
     const livesContainer = document.getElementById('lives-container');
     const livesArray = createLivesArray(numLives);
 
+    console.log('Populating lives display...');
     for (let i = 0; i < livesArray.length; i++) {
         const lifeSpan = document.createElement('span');
         lifeSpan.innerHTML = livesArray[i];
@@ -267,6 +284,7 @@ function deductLife() {
     const livesContainer = document.getElementById('lives-container');
     const lives = livesContainer.getElementsByTagName('span');
 
+    console.log('Deducting life...');
     if (lives.length > 0) {
         lives[lives.length - 1].remove();
     }
@@ -280,6 +298,8 @@ function deductLife() {
  */
 function startCountdown(initialValue, onCountdownEnd) {
     let countdownValue = initialValue;
+
+    console.log('Starting countdown...');
 
     // Initial display of the countdown
     updateCountdown(countdownValue);
@@ -300,6 +320,7 @@ function startCountdown(initialValue, onCountdownEnd) {
             // Executes the callback function when the countdown ends
             if (onCountdownEnd && typeof onCountdownEnd === 'function') {
                 onCountdownEnd();
+                console.log('Countdown ended.');
             }
             memoryPhase = false;
         }
@@ -311,6 +332,7 @@ function startCountdown(initialValue, onCountdownEnd) {
  * Function to update the countdown display
  */
 function updateCountdown(value) {
+    console.log('Updating countdown display...');
     document.getElementById('countdown').innerText = `${value}`;
 }
 
@@ -323,12 +345,36 @@ function checkGameOver() {
     const livesContainer = document.getElementById('lives-container');
     const lives = livesContainer.getElementsByTagName('span');
 
+    console.log('Checking for game over...');
+
     if (lives.length === 0) {
+        console.log('Game over');
+
         // Show the game over overlay
         const gameOverOverlay = document.getElementById('game-over-overlay');
         gameOverOverlay.style.display = 'flex';
 
         // Plays the game over sound
         gameOverSound.play();
+    }
+}
+
+
+/**
+ * Checks if the player has won the game and displays winner message if they have
+ */
+function checkForWin() {
+    console.log('Checking for win...');
+
+    // Check if all pairs are found
+    if (correctPairs.length === pictures.length) {
+        console.log('Winner!');
+
+        // Show the winner overlay
+        const winnerOverlay = document.getElementById('winner-overlay');
+        winnerOverlay.style.display = 'flex';
+
+        // Plays the win sound
+        winSound.play();
     }
 }
