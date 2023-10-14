@@ -30,7 +30,7 @@ const gameOverSound = document.getElementById('game-over');
 const matchSound = document.getElementById('match');
 const noMatchSound = document.getElementById('no-match');
 const selectSound = document.getElementById('select');
-const timerSound = document.getElementById('timer');
+const clockSound = document.getElementById('clock');
 const winSound = document.getElementById('win');
 
 let flippedTiles = [];
@@ -283,6 +283,9 @@ function startCountdown(initialValue, onCountdownEnd) {
 
     // Initial display of the countdown
     updateCountdown(countdownValue);
+
+    // Plays the clock sound when the timer starts
+    clockSound.play();
 
     // Updates the countdown every second
     const countdownInterval = setInterval(() => {

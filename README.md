@@ -23,3 +23,10 @@ fix - added a memoryPhase condition to the flipTile function
 
 sounds not playing
 fix - audio clips have been moved before the script is loaded in the html file
+
+
+
+TO DO
+
+add winner overlay and sound
+add timer sound
