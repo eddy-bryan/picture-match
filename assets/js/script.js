@@ -183,6 +183,9 @@ function checkMatch() {
     const picture2 = tile2.dataset.picture;
 
     if (picture1 === picture2) {
+        // Plays match sound if tiles match
+        matchSound.play();
+
         // If tiles match, adds green border around tiles
         tile1.style.border = '5px solid rgb(0, 170, 0)';
         tile2.style.border = '5px solid rgb(0, 170, 0)';
@@ -211,6 +214,9 @@ function checkMatch() {
 
         }
     } else {
+        // Plays the no-match sound if the tiles don't match
+        noMatchSound.play();
+
         // If no match, flip the tiles back
         tile1.src = 'assets/images/tile-back.webp';
         tile2.src = 'assets/images/tile-back.webp';
