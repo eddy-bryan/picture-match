@@ -324,5 +324,8 @@ function checkGameOver() {
         // Show the game over overlay
         const gameOverOverlay = document.getElementById('game-over-overlay');
         gameOverOverlay.style.display = 'flex';
+
+        // Plays the game over sound
+        gameOverSound.play();
     }
 }
