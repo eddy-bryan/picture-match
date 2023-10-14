@@ -2,6 +2,13 @@ Pictures - catalyststuff on Freepik.com
 
 Card Back Image - Rakib Khan on vecteezy.com
 
+Game sounds - uppbeat.io
+betacut
+Joshua Chivers
+Soundroll
+OM FX
+Jam FX
+
 
 bugs and testing
 

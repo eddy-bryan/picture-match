@@ -206,6 +206,9 @@ function checkMatch() {
         tile1.src = 'assets/images/tile-back.webp';
         tile2.src = 'assets/images/tile-back.webp';
         deductLife();
+
+        // After deducting a life, checks if the player is out of lives.
+        checkGameOver();
     }
 
     // Clear the flipped tiles array
@@ -242,6 +245,9 @@ function initialiseLives(numLives) {
 }
 
 
+/**
+ * Removes a life from the player
+ */
 function deductLife() {
     const livesContainer = document.getElementById('lives-container');
     const lives = livesContainer.getElementsByTagName('span');
@@ -288,4 +294,20 @@ function startCountdown(initialValue, onCountdownEnd) {
  */
 function updateCountdown(value) {
     document.getElementById('countdown').innerText = `${value}`;
+}
+
+
+/**
+ * Checks if the player has run out of lives and displays game over message if
+ * they have none left
+ */
+function checkGameOver() {
+    const livesContainer = document.getElementById('lives-container');
+    const lives = livesContainer.getElementsByTagName('span');
+
+    if (lives.length === 0) {
+        // Show the game over overlay
+        const gameOverOverlay = document.getElementById('game-over-overlay');
+        gameOverOverlay.style.display = 'flex';
+    }
 }
