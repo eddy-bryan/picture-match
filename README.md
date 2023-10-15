@@ -27,9 +27,18 @@ fix - audio clips have been moved before the script is loaded in the html file
 winner message pops up before win
 fix - correct pairs were stored as individual tiles in the correctPairs array rather than as pairs. Updated the checkForWin function to suit.
 
+overlay messages sometimes do not cover the window
+fix - changed sizing units to 100vh and 100vw
 
 
-TO DO
 
-add winner overlay and sound
-add timer sound
+future ideas
+
+changable grid sized
+
+ifficulty levels
+
+points system
+- rename the time remaining stat to time elapsed and have a running clock while the game is running
+- give the player a number of points based on how many lives remain after winning the game (ie. 10pts per life remaining)
+- multiply the points that the player receives by a number depending on how much time has elapsed during their game
