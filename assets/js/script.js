@@ -77,8 +77,8 @@ function createGameBoard(pictures) {
             if (currentPicture < shuffledPictures.length) {
                 const td = document.createElement('td');
                 const img = document.createElement('img');
-                img.style.width = '150px';
-                img.style.height = '150px';
+                // img.style.width = '150px';
+                // img.style.height = '150px';
                 img.src = 'assets/images/tile-back.webp';
                 img.alt = 'Picture Tile';
 
