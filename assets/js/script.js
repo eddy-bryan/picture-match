@@ -44,6 +44,15 @@ let memoryPhase = true;
 let coundownValue = 0;
 
 
+checkViewportOrientation();
+
+// Calls checkViewportOrientation() if the user changes their device orientation
+window.addEventListener("orientationchange", checkViewportOrientation);
+
+// Calls checkViewportOrientation() if the user resizes their device window
+window.addEventListener("resize", checkViewportOrientation);
+
+
 /**
  * Shuffles an array
  */
@@ -413,10 +422,22 @@ function restartGame() {
 }
 
 
-
 const restartButtons = document.getElementsByClassName('restart-button');
 
 // Enables the game to restart when the play again button is clicked
 for (let i = 0; i < restartButtons.length; i++) {
     restartButtons[i].addEventListener('click', restartGame);
+}
+
+
+/**
+ * Checks if the user is viewing the game in portrait and displays a message
+ * advising to use landscape orientation
+ */
+function checkViewportOrientation() {
+    const isPortrait = window.innerWidth < window.innerHeight;
+
+    if (isPortrait) {
+        alert("For the best experience, please use landscape orientation. The game may not display properly in portrait mode on tablets and smartphones.")
+    }
 }
