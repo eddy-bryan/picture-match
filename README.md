@@ -2,6 +2,8 @@ Pictures - catalyststuff on Freepik.com
 
 Card Back Image - Rakib Khan on vecteezy.com
 
+Background - brgfx on Freepik.com
+
 Game sounds - uppbeat.io
 betacut
 Joshua Chivers
@@ -29,6 +31,9 @@ fix - correct pairs were stored as individual tiles in the correctPairs array ra
 
 overlay messages sometimes do not cover the window
 fix - changed sizing units to 100vh and 100vw
+
+audio lag on mobile devices
+fix - added preload attribute to audio files in html document
 
 
 
