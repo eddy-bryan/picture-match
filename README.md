@@ -33,7 +33,7 @@ overlay messages sometimes do not cover the window
 fix - changed sizing units to 100vh and 100vw
 
 audio lag on mobile devices
-fix - added preload attribute to audio files in html document
+fix - 
 
 
 
