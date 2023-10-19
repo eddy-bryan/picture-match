@@ -32,6 +32,9 @@ fix - correct pairs were stored as individual tiles in the correctPairs array ra
 overlay messages sometimes do not cover the window
 fix - changed sizing units to 100vh and 100vw
 
+game uses 100vh for height and width, emulator in developer tools does not take the address bar into consideration and game is obstructed by this when opening on a mobile device with a scroll bar appearing
+fix - use % height and width for mobile styling
+
 audio lag on mobile devices
 fix - 
 
