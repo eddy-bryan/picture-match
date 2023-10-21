@@ -1,3 +1,10 @@
+# Picture Match
+Picture Match is an engaging memory and puzzle game designed to provide entertainment and cognitive exercise to players of all ages. Our project aims to offer an enjoyable and visually stimulating gaming experience that challenges memory and pattern recognition skills. Picture Match is intended for individuals who seek a fun way to test their memory and sharpen their cognitive abilities.
+
+This fully responsive web-based game will immerse players in a delightful challenge, requiring them to match pairs of images hidden on the game board. Whether you're looking for a quick brain workout or a relaxing pastime, Picture Match is here to offer an entertaining and rewarding gaming experience.
+
+![Screenshot of responsive design.](assets/images/responsive.png)
+
 Pictures - catalyststuff on Freepik.com
 
 Card Back Image - Rakib Khan on vecteezy.com
