@@ -7,7 +7,7 @@ This fully responsive web-based game will immerse players in a delightful challe
 
 ## Features
 
-# Existing Features
+### Existing Features
 
 - **Welcome Overlay:** When users first access the game, they are greeted with a welcoming overlay. This overlay provides a brief introduction to the game, explaining the rules and objectives. It invites users to click the "Play" button to start the game. The overlay sets the stage for an enjoyable gaming experience and ensures that players understand the game's premise from the outset.
 
@@ -35,7 +35,7 @@ This fully responsive web-based game will immerse players in a delightful challe
 
 ![Screenshot of the winner overlay.](assets/images/winner-overlay.png)
 
-# Features to Implement
+### Features to Implement
 
 - **Changeable Grid Sizes:** Implement different grid sizes to provide users with varying levels of challenge, making the game accessible to players of all skill levels.
 
@@ -48,6 +48,26 @@ This fully responsive web-based game will immerse players in a delightful challe
   - Rename the "Time Remaining" stat to "Time Elapsed" after the game starts and include a running clock that tracks the time throughout the game. This change would add an extra layer of challenge and excitement for players.
   
   - Implement a system that multiplies the points a player receives by a factor dependant on the time elapsed during their game. This approach would reward faster thinking and decision-making, encouraging players to complete the game as quickly as possible.
+
+## Testing and Bug Fixes
+
+During the development and testing of the Picture Match game, the following issues were identified and subsequently addressed:
+
+### Fixed Bugs
+
+- **Same Tile Click Issue:** In some instances, clicking the same tile twice would still trigger a match. To resolve this, a check for whether a tile is already in the 'flippedTiles' array before considering it for a match has been added.
+
+- **Incorrect Tile Click Behavior:** Correct tiles remained clickable and would flip back over if an unmatched tile was clicked, still retaining their green border. To address this, a new array specifically for correct pairs was implemented alongside additional checks withing the 'flipTile' function.
+
+- **Tiles Flipping Before Game Start:** Tiles were sometimes flipping if clicked before the game officially began. Additionally, correct tiles retained the green border and locked in the tile-back image state after the game started. To fix this, a 'memoryPhase' condition was added to the 'flipTile' function to ensure tiles could only be interacted with when the game is in progress.
+
+- **Sound Playback Issue:** There were instances where audio clips were not playing. This error was cause by the audio clips not being loaded until after the script in the HTML file. To rectify this issue, the audio clips were moved so that they appear before the script in the HTML file.
+
+- **Winner Message Timing:** The winner message occasionally appeared before a player had actually won the game. This was caused due to confusion with the 'correctPairs' array as tiles are stored individually to the array rather than as paired matches. Due do this, the player only had to match half of the pairs to be greeted with the winner overlay. To address this, the 'checkForWin' function was modified accordingly.
+
+- **Overlay Display Issue:** In some cases, overlay messsages did not completely cover the window, affecting the visual experience. This was resolved by changing the sizing units to '100vh' and '100vw' to ensure consistent overlay sizing.
+
+
 
 Pictures - catalyststuff on Freepik.com
 
@@ -63,7 +83,9 @@ OM FX
 Jam FX
 
 
-bugs and testing
+testing
+
+bugs
 
 if the same tile is clicked twice the game still calls a match
 fix - added flippedTiles.includes(tile) to the if statement that checks to see if tiles are locked or revealed
@@ -83,21 +105,16 @@ fix - correct pairs were stored as individual tiles in the correctPairs array ra
 overlay messages sometimes do not cover the window
 fix - changed sizing units to 100vh and 100vw
 
+
+validator testing
+
+html...
+css...
+js...
+
+
+unfixed bugs
+
 game uses 100vh for height and width, emulator in developer tools does not take the address bar into consideration and game is obstructed by this when opening on a mobile device with a scroll bar appearing
-fix - 
 
 audio lag on mobile devices
-fix - 
-
-
-
-future ideas
-
-changable grid sized
-
-ifficulty levels
-
-points system
-- rename the time remaining stat to time elapsed and have a running clock while the game is running
-- give the player a number of points based on how many lives remain after winning the game (ie. 10pts per life remaining)
-- multiply the points that the player receives by a number depending on how much time has elapsed during their game
