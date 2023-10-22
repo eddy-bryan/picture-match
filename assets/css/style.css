@@ -185,14 +185,20 @@ h2 {
         font-size: 2.2vh;
     }
 
-    body {
+    html {
         height: 100svh;
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
     }
 
     #game-start-overlay,
     #game-over-overlay,
     #winner-overlay {
-        height: 100svh;
+        height: 100%;
+        width: 100%;
     }
 
     #title {
