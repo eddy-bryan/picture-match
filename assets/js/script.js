@@ -41,7 +41,7 @@ let tilesLocked = false;
 
 let memoryPhase = true;
 
-let coundownValue = 0;
+let countdownValue = 0;
 
 
 checkViewportOrientation();
@@ -438,6 +438,5 @@ function checkViewportOrientation() {
     const isPortrait = window.innerWidth < window.innerHeight;
 
     if (isPortrait) {
-        alert("For the best experience, please use landscape orientation. The game may not display properly in portrait mode on tablets and smartphones.")
+        alert("For the best experience, please use landscape orientation. The game may not display properly in portrait mode on tablets and smartphones.");
     }
-}
