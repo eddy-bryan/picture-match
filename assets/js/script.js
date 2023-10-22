@@ -73,6 +73,51 @@ function createGameBoard(pictures) {
     const shuffledPictures = shuffle(pictures);
     const table = document.createElement('table');
 
+    // Create the table header (thead)
+    const thead = document.createElement('thead');
+
+    // Create a row for the table header
+    const headerRow = document.createElement('tr');
+
+    // Create table headers and add them to the header row
+    const headerA = document.createElement('th');
+    headerA.textContent = 'Column A';
+    headerA.style.display = 'none'; // CSS style to visually hide the header
+
+    const headerB = document.createElement('th');
+    headerB.textContent = 'Column B';
+    headerB.style.display = 'none'; // CSS style to visually hide the header
+
+    const headerC = document.createElement('th');
+    headerC.textContent = 'Column C';
+    headerC.style.display = 'none'; // CSS style to visually hide the header
+
+    const headerD = document.createElement('th');
+    headerD.textContent = 'Column D';
+    headerD.style.display = 'none'; // CSS style to visually hide the header
+
+    const headerE = document.createElement('th');
+    headerE.textContent = 'Column E';
+    headerE.style.display = 'none'; // CSS style to visually hide the header
+
+    const headerF = document.createElement('th');
+    headerF.textContent = 'Column F';
+    headerF.style.display = 'none'; // CSS style to visually hide the header
+
+    // Append the headers to the header row
+    headerRow.appendChild(headerA);
+    headerRow.appendChild(headerB);
+    headerRow.appendChild(headerC);
+    headerRow.appendChild(headerD);
+    headerRow.appendChild(headerE);
+    headerRow.appendChild(headerF);
+
+    // Append the header row to the thead
+    thead.appendChild(headerRow);
+
+    // Append the thead to the table
+    table.appendChild(thead);
+
     // Loop through each row of the table
     for (let row = 0; row < 4; row++) {
         const tableRow = document.createElement('tr');
