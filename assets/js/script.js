@@ -440,3 +440,4 @@ function checkViewportOrientation() {
     if (isPortrait) {
         alert("For the best experience, please use landscape orientation. The game may not display properly in portrait mode on tablets and smartphones.");
     }
+}

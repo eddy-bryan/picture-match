@@ -88,54 +88,41 @@ During the development and testing of the Picture Match game, the following issu
 
 Efforts are ongoing to further optimise and enhance the Picture Match game to deliver the best possible user esperience.
 
+## Deployment
 
+The webbsite has been deployed using GitHub pages. To do this the following procedure has been used:
 
-Pictures - catalyststuff on Freepik.com
+1. Go to the settings tab in the GitHub repositary.
 
-Card Back Image - Rakib Khan on vecteezy.com
+2. Navigated to 'Pages' from the menu, under 'Code and automation'.
 
-Background - brgfx on Freepik.com
+3. Ensure that Master Branch is selected from the 'Deploy from a branch' dropdown menu underneath 'Source'.
 
-Game sounds - uppbeat.io
-betacut
-Joshua Chivers
-Soundroll
-OM FX
-Jam FX
+4. The link to the webpage was provided upon selecting a source.
 
+A link can be followed to the live website here: [Picture Match](https://eddy-bryan.github.io/picture-match/)
 
-testing
+## Credits
 
-bugs
+Please refer to this section for credits and acknowledgments to the artists and sources that contributed images and audio files, enhancing the visual and auditory aspects of this project.
 
-if the same tile is clicked twice the game still calls a match
-fix - added flippedTiles.includes(tile) to the if statement that checks to see if tiles are locked or revealed
+### Content
 
-correct tiles still remain clickable and flip back over if an unmatching tile is clicked, the tile still retains its green border
-fix - created a new array for correct pairs and added an additional check to the flipTile function
+- **Icons:** The life heart icon was taken from [Font Awesome](https://fontawesome.com/?utm_source=v4_homepage&utm_medium=display&utm_campaign=fa5_released&utm_content=banner)
+- **Font:** The font was taken from [Google Fonts](https://fonts.google.com)
+- **Favicon:** The favicon was created on [favicon.io](https://favicon.io/favicon-converter/)
 
-tiles are flipping if clicked before the game starts and correct tiles retain the green border and lock in the tile-back image after the game starts
-fix - added a memoryPhase condition to the flipTile function
+### Media
 
-sounds not playing
-fix - audio clips have been moved before the script is loaded in the html file
+- **Pictures:** Pictures for the project were sourced from the following websites and their accompanying artists:
+  - Picture tile images - [catalyststuff](https://www.freepik.com/author/catalyststuff) on [Freepik.com](https://www.freepik.com)
+  - Card back image - [Rakib Khan](https://www.vecteezy.com/members/rakib205012/uploads) on [Vecteezy.com](https://www.vecteezy.com/)
+  - Background image - [brgfx](https://www.freepik.com/author/brgfx) on [Freepik.com](https://www.freepik.com)
 
-winner message pops up before win
-fix - correct pairs were stored as individual tiles in the correctPairs array rather than as pairs. Updated the checkForWin function to suit.
-
-overlay messages sometimes do not cover the window
-fix - changed sizing units to 100vh and 100vw
-
-
-validator testing
-
-html...
-css...
-js...
-
-
-unfixed bugs
-
-game uses 100vh for height and width, emulator in developer tools does not take the address bar into consideration and game is obstructed by this when opening on a mobile device with a scroll bar appearing
-
-audio lag on mobile devices
+- **Game Sounds:** Audio files for the project were sourced from the following website and artists:
+  - [Uppbeat](https://uppbeat.io/) - Artists:
+    - betacut
+    - Jushua Chivers
+    - Soundroll
+    - OM FX
+    - Jam FX
