@@ -186,14 +186,13 @@ h2 {
     }
 
     body {
-        height: 100dvh;
+        height: 100svh;
     }
 
     #game-start-overlay,
     #game-over-overlay,
     #winner-overlay {
-        height: 100dvh;
-        width: 100dvw;
+        height: 100svh;
     }
 
     #title {
