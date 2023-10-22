@@ -75,10 +75,13 @@ During the development and testing of the Picture Match game, the following issu
 
 - **JavaScript:** No errors were returned when passing the JavaScript code through the official [Jshint validator](https://jshint.com). The following metrics were returned:
 
-    - There are 19 functions in this file.
-    - Function with the largest signature take 2 arguments, while the median is 0.
-    - Largest function has 25 statements in it, while the median is 5.
-    - The most complex function has a cyclomatic complexity value of 7 while the median is 2.
+  - There are 19 functions in this file.
+  - Function with the largest signature take 2 arguments, while the median is 0.
+  - Largest function has 25 statements in it, while the median is 5.
+  - The most complex function has a cyclomatic complexity value of 7 while the median is 2.
+
+- **Accessibility:** The website has been run through lighthouse within devtools confirming that all accessibility guidelines are covered:
+![Screenshot of lighthouse test results.](assets/images/lighthouse.png)
 
 ### Unfixed Bugs:
 
