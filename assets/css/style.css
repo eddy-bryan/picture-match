@@ -185,28 +185,14 @@ h2 {
         font-size: 2.2vh;
     }
 
-    body {
-        height: 100dvh;
-    }
-
-    #game-area {
-        height: 100dvh;
-    }
-
-    #game-start-overlay,
-    #game-over-overlay,
-    #winner-overlay {
-        height: 100dvh;
-    }
-
     #title {
         display: none;
     }
 
-    /* #game-area {
+    #game-area {
         height: 100vh;
         width: auto;
-    } */
+    }
 
     #game-stats {
         height: fit-content;
