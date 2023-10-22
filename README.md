@@ -69,11 +69,16 @@ During the development and testing of the Picture Match game, the following issu
 
 ### Validator Testing:
 
-- **HTML:**
+- **HTML:** No errors were returned when passing the HTML code through the official [W3C validator](https://validator.w3.org).
 
-- **CSS:**
+- **CSS:** No errors were returned when passing the CSS code through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/).
 
-- **JavaScript:**
+- **JavaScript:** No errors were returned when passing the JavaScript code through the official [Jshint validator](https://jshint.com). The following metrics were returned:
+
+    - There are 19 functions in this file.
+    - Function with the largest signature take 2 arguments, while the median is 0.
+    - Largest function has 25 statements in it, while the median is 5.
+    - The most complex function has a cyclomatic complexity value of 7 while the median is 2.
 
 ### Unfixed Bugs:
 
@@ -82,6 +87,8 @@ During the development and testing of the Picture Match game, the following issu
 - **Audio Lag on Mobile Devices:** There may be instances of audio lag on certain mobile devices, which is a known issue still under investigation.
 
 Efforts are ongoing to further optimise and enhance the Picture Match game to deliver the best possible user esperience.
+
+
 
 Pictures - catalyststuff on Freepik.com
 
