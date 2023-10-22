@@ -11,15 +11,29 @@ This fully responsive web-based game will immerse players in a delightful challe
 
 - **Welcome Overlay:** When users first access the game, they are greeted with a welcoming overlay. This overlay provides a brief introduction to the game, explaining the rules and objectives. It invites users to click the "Play" button to start the game. The overlay sets the stage for an enjoyable gaming experience and ensures that players understand the game's premise from the outset.
 
+![Screenshot of the welcome overlay.](assets/images/welcome-overlay.png)
+
 - **Title Design:** At the top of the game, users are greeted with the distinctive "Picture Match" title. The chosen fun handwriting style font adds a thematic touch to the game, creating a playful and engaging atmosphere for players. it serves as a clear introduction to the game, setting the tone for a fun and enjoyable experience.
+
+![Screenshot of the title area.](assets/images/title.png)
 
 - **Game Board:** The central game board is where the action takes place. Users can see a grid of picture tiles that need to be matched. The game board provides a visual and interactive interface for playing Picture Match.
 
+![Screenshot of the game board.](assets/images/game-board.png)
+
 - **Game Stats:** In the game stats section, users can monitor their progress and experience an added element of intentional stress and excitement. The timer, with it's ticking countdown, adds a thrilling sense of urgency, challenging users to memorise the picture tiles before they are hidden. The life counter keeps track of remaining lives, intensifying the challenge and enhancing the fun by letting users know how many mmore attempts they have left to correctly match the remaining pairs. This combination of time pressure and limited lives creates and engaging and dynamic gaming experience.
 
-- **Interactive Gameplay:** Users can click on picture tiles to flip them and try to find matching pairs. The gameplay is interactive and engaging, encouraging memory and concentration.
+![Screenshot of the game stats.](assets/images/game-stats.png)
+
+- **Interactive Gameplay:** Users can click on picture tiles to flip them and try to find matching pairs, accompanied by engaging audio feedback. When tiles are clicked, distinctive sounds enhance the gaming experience, providing audio cues for tiles flipping back when no match is found and a satisfying "ching" sound when correct image pairs are matched. This interactive gameplay encourages memory and concentration while immersing players in a multisensory gaming adventure.
+
+![Screenshot of demonstrating interactive gameplay.](assets/images/interactive-gameplay.png)
 
 - **Game Over and Winner Overlays:** In case of a win or a loss, the game provides clear feedback to users through the game over and winner overlays. These overlays offer either a congratulatory or encouraging message to encourage the user to keep playing, and provides the user a button with an option to play again and continue the fun.
+
+![Screenshot of the game over overlay.](assets/images/game-over-overlay.png)
+
+![Screenshot of the winner overlay.](assets/images/winner-overlay.png)
 
 # Features to Implement
 
