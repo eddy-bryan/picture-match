@@ -5,6 +5,36 @@ This fully responsive web-based game will immerse players in a delightful challe
 
 ![Screenshot of responsive design.](assets/images/responsive.png)
 
+## Features
+
+# Existing Features
+
+- **Welcome Overlay:** When users first access the game, they are greeted with a welcoming overlay. This overlay provides a brief introduction to the game, explaining the rules and objectives. It invites users to click the "Play" button to start the game. The overlay sets the stage for an enjoyable gaming experience and ensures that players understand the game's premise from the outset.
+
+- **Title Design:** At the top of the game, users are greeted with the distinctive "Picture Match" title. The chosen fun handwriting style font adds a thematic touch to the game, creating a playful and engaging atmosphere for players. it serves as a clear introduction to the game, setting the tone for a fun and enjoyable experience.
+
+- **Game Board:** The central game board is where the action takes place. Users can see a grid of picture tiles that need to be matched. The game board provides a visual and interactive interface for playing Picture Match.
+
+- **Game Stats:** In the game stats section, users can monitor their progress and experience an added element of intentional stress and excitement. The timer, with it's ticking countdown, adds a thrilling sense of urgency, challenging users to memorise the picture tiles before they are hidden. The life counter keeps track of remaining lives, intensifying the challenge and enhancing the fun by letting users know how many mmore attempts they have left to correctly match the remaining pairs. This combination of time pressure and limited lives creates and engaging and dynamic gaming experience.
+
+- **Interactive Gameplay:** Users can click on picture tiles to flip them and try to find matching pairs. The gameplay is interactive and engaging, encouraging memory and concentration.
+
+- **Game Over and Winner Overlays:** In case of a win or a loss, the game provides clear feedback to users through the game over and winner overlays. These overlays offer either a congratulatory or encouraging message to encourage the user to keep playing, and provides the user a button with an option to play again and continue the fun.
+
+# Features to Implement
+
+- **Changeable Grid Sizes:** Implement different grid sizes to provide users with varying levels of challenge, making the game accessible to players of all skill levels.
+
+- **Difficulty Levels:** Introduce multiple difficulty levels, allowing players to choose the level that suits their gaming expertise. Each level could geature different time limits and life counts for an enhanced gaming experience.
+
+- **Points System:** Create a points system to track player performance.
+  
+  - Players could earn points based on the number of lives remaining after successfully completing the game. For example, aware 10 points for each remaining life.
+  
+  - Rename the "Time Remaining" stat to "Time Elapsed" after the game starts and include a running clock that tracks the time throughout the game. This change would add an extra layer of challenge and excitement for players.
+  
+  - Implement a system that multiplies the points a player receives by a factor dependant on the time elapsed during their game. This approach would reward faster thinking and decision-making, encouraging players to complete the game as quickly as possible.
+
 Pictures - catalyststuff on Freepik.com
 
 Card Back Image - Rakib Khan on vecteezy.com
