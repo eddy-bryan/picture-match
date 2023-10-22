@@ -53,7 +53,7 @@ This fully responsive web-based game will immerse players in a delightful challe
 
 During the development and testing of the Picture Match game, the following issues were identified and subsequently addressed:
 
-### Fixed Bugs
+### Fixed Bugs:
 
 - **Same Tile Click Issue:** In some instances, clicking the same tile twice would still trigger a match. To resolve this, a check for whether a tile is already in the 'flippedTiles' array before considering it for a match has been added.
 
@@ -67,7 +67,21 @@ During the development and testing of the Picture Match game, the following issu
 
 - **Overlay Display Issue:** In some cases, overlay messsages did not completely cover the window, affecting the visual experience. This was resolved by changing the sizing units to '100vh' and '100vw' to ensure consistent overlay sizing.
 
+### Validator Testing:
 
+- **HTML:**
+
+- **CSS:**
+
+- **JavaScript:**
+
+### Unfixed Bugs:
+
+- **Mobile Device Scroll Bar:** The game utilizes '100vh' for height and '100vw' for width, but the emulator in Chrome developer tools does not appear to account for the address bar on a mobile device. As a result, the game is partially obstructed by the address bar and a scroll bar appears to the side.
+
+- **Audio Lag on Mobile Devices:** There may be instances of audio lag on certain mobile devices, which is a known issue still under investigation.
+
+Efforts are ongoing to further optimise and enhance the Picture Match game to deliver the best possible user esperience.
 
 Pictures - catalyststuff on Freepik.com
 
