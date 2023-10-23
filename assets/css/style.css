@@ -1,3 +1,4 @@
+/* General styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,6 +7,7 @@
     font-size: 1.7vh;
 }
 
+/* General body styles and background image */
 body {
     display: flex;
     flex-direction: column;
@@ -15,11 +17,13 @@ body {
     background: url('../images/background.webp') no-repeat center center / cover;
 }
 
+/* Table styling for game board to ensure no spacing or gap between cell borders */
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
+/* Styling for picture tiles */
 img {
     display: block;
     margin: 0.3125rem;
@@ -37,16 +41,19 @@ h2 {
     font-size: 2rem;
 }
 
+/* Life heart icon styling */
 .fa-heart {
     color: red;
     padding: 0 0.1rem;
     font-size: 1.5rem;
 }
 
+/* Time remaining countdown */
 #countdown {
     font-size: 2rem;
 }
 
+/* Styling for the whole game area container and its contents */
 #game-area {
     display: flex;
     justify-content: center;
@@ -54,12 +61,14 @@ h2 {
     flex-direction: column;
 }
 
+/* Picture match title and game statistics above and below the game board */
 #title,
 #game-stats {
     display: flex;
     height: 8rem;
 }
 
+/* Individual game statistic styles */
 #life-counter,
 #timer {
     display: flex;
@@ -69,27 +78,32 @@ h2 {
     height: 46%;
 }
 
+/* Lives container stores the lives inside the life counter area */
 #lives-container {
     width: 9rem;
     align-self: flex-start;
 }
 
+/* Picture match title specific styles */
 #title {
     align-items: center;
     flex-direction: column;
 }
 
+/* Game statistics specific styles */
 #game-stats {
     justify-content: space-between;
     width: 100%;
 }
 
+/* Styling for the time remaining and remaining lives text */
 #life-counter h2,
 #timer h2 {
     padding: 0.1rem;
     align-self: flex-start;
 }
 
+/* Game start overlay styles */
 #game-start-overlay {
     position: fixed;
     width: 100vw;
@@ -102,16 +116,19 @@ h2 {
     justify-content: center;
 }
 
+/* Styling for the instructions container on the game start overlay */
 #game-instructions {
     text-align: center;
     width: 40%;
 }
 
+/* Styling for the instructional paragraph on the game start overlay */
 #game-instructions p {
     font-size: 1.5rem;
     margin-bottom: 1.25rem;
 }
 
+/* Styling for the winner and game over overlays */
 #game-over-overlay,
 #winner-overlay {
     position: fixed;
@@ -124,31 +141,37 @@ h2 {
     justify-content: center;
 }
 
+/* Specific styling for the game over overlay */
 #game-over-overlay {
     background: rgba(115, 0, 0, 0.9);
 }
 
+/* Specific styling for the winner overlay */
 #winner-overlay {
     background: rgba(0, 115, 0, 0.9);
 }
 
+/* Styling for the game over and winner message containers */
 #game-over-message,
 #winner-message {
     text-align: center;
     width: 40%;
 }
 
+/* Styling for the game over and winner message titles */
 #game-over-message h1,
 #winner-message h1 {
     text-transform: uppercase;
 }
 
+/* Styling for the game over and winner message paragraphs */
 #game-over-message p,
 #winner-message p {
     font-size: 1.5rem;
     margin-bottom: 1.25rem;
 }
 
+/* Styling for the play button on the game start overlay */
 #start-button {
     padding: 0.625rem 1.25rem;
     background-color: green;
@@ -160,10 +183,12 @@ h2 {
     border-radius: 0.9375rem;
 }
 
+/* Hover styling for the play button */
 #start-button:hover {
     background-color: rgb(0, 80, 0);
 }
 
+/* Styling for the play again buttons on the game over and winner overlays */
 .restart-button {
     padding: 0.625rem 1.25rem;
     background-color: rgb(90, 90, 90);
@@ -175,25 +200,30 @@ h2 {
     border-radius: 0.9375rem;
 }
 
+/* Hover styling for the play again buttons */
 .restart-button:hover {
     background-color: rgb(50, 50, 50);
 }
 
 /* Styles for tablets and smartphones */
 @media (max-width: 1023px) {
+    /* General styles */
     * {
         font-size: 2.2vh;
     }
 
+    /* Hides the title to save space */
     #title {
         display: none;
     }
 
+    /* Game area styles */
     #game-area {
         height: 100vh;
         width: auto;
     }
 
+    /* Game statistics area styles */
     #game-stats {
         height: fit-content;
     }
