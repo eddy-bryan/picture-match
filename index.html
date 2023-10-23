@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,6 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Tilt+Neon&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -20,15 +26,19 @@
     <title>Picture Match</title>
   </head>
   <body>
+    <!-- Game area -->
     <div id="game-area">
+        <!-- Picture match title block (hidden on smartphones) -->
       <div id="title">
         <h1 id="main-heading">Picture Match!</h1>
       </div>
 
+      <!-- Game board - picture tile grid -->
       <div id="game-board">
         <!-- Game board will appear here -->
       </div>
 
+      <!-- Game statistics - Timer and life counters -->
       <div id="game-stats">
         <div id="timer">
           <h2>Time Remaining: <span id="countdown">0</span></h2>
@@ -41,6 +51,7 @@
       </div>
     </div>
 
+    <!-- Game starts overlay - appears before game begins -->
     <div id="game-start-overlay">
       <div id="game-instructions">
         <h1>Picture Match!</h1>
@@ -54,6 +65,7 @@
       </div>
     </div>
 
+    <!-- Game over overlay - hidden until a loss is recorded -->
     <div id="game-over-overlay">
       <div id="game-over-message">
         <h1>Game Over</h1>
@@ -65,6 +77,7 @@
       </div>
     </div>
 
+    <!-- Winner overlay - hidden until a win is recorded -->
     <div id="winner-overlay">
       <div id="winner-message">
         <h1>Winner</h1>
@@ -76,6 +89,7 @@
       </div>
     </div>
 
+    <!-- Game audio clips -->
     <audio src="assets/sounds/game-over.mp3" id="game-over"></audio>
     <audio src="assets/sounds/match.mp3" id="match"></audio>
     <audio src="assets/sounds/no-match.mp3" id="no-match"></audio>
@@ -83,7 +97,10 @@
     <audio src="assets/sounds/timer.mp3" id="clock"></audio>
     <audio src="assets/sounds/win.mp3" id="win"></audio>
 
+    <!-- JavaScript filepath -->
     <script src="assets/js/script.js"></script>
+
+    <!-- Font awesome -->
     <script
       src="https://kit.fontawesome.com/20d4ac6c68.js"
       crossorigin="anonymous"
