@@ -77,7 +77,7 @@ During the development and testing of the Picture Match game, the following issu
 
   - There are 19 functions in this file.
   - Function with the largest signature take 2 arguments, while the median is 0.
-  - Largest function has 25 statements in it, while the median is 5.
+  - Largest function has 47 statements in it, while the median is 5.
   - The most complex function has a cyclomatic complexity value of 7 while the median is 2.
 
 - **Accessibility:** The website has been run through lighthouse within devtools confirming that all accessibility guidelines are covered:
