@@ -26,6 +26,7 @@ const pictures = [
     'spider.webp',
 ];
 
+// Game sounds assigned to variables
 const gameOverSound = document.getElementById('game-over');
 const matchSound = document.getElementById('match');
 const noMatchSound = document.getElementById('no-match');
